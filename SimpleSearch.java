@@ -1,18 +1,15 @@
 import java.io.IOException;
 import java.net.URI;
-import java.util.Scanner;
 
 class Handler implements URLHandler {
 
     String keyword;
-    Scanner searchInput = new Scanner(System.in);
     int num = 0;
     int num2 = 0;
     String[] keyWordlist;
     String newKeyword;
-    /* (non-Javadoc)
-     * @see URLHandler#handleRequest(java.net.URI)
-     */
+    
+
     public String handleRequest(URI url) {
         if (url.getPath().equals("/")) {
             return String.format("Search Engine Home");
@@ -32,7 +29,7 @@ class Handler implements URLHandler {
                     String[] parameters = url.getQuery().split("=");
                     if (parameters[num].equals("newKeyword")) {
                         newKeyword = String.format(parameters[num+1]);
-                        return String.format("A New Keyword Has Been Added: s%.", parameters[num+1]); 
+                        return String.format("New result added. s%.", parameters[num+1]); 
 
                     }
 
