@@ -15,7 +15,7 @@ class Handler implements URLHandler {
      */
     public String handleRequest(URI url) {
         if (url.getPath().equals("/")) {
-            return String.format("Welcome to the Simple Search Engine!!!");
+            return String.format("Search Engine Home");
 
         } else if (url.getPath().equals(keyWordlist[0])) {
             keyword = keyWordlist[0];
