@@ -7,19 +7,20 @@ class Handler implements URLHandler {
     String keyword;
     int num = 0;
     //int num2;
-    String[] wordlist = new String[] {"football", "soccer", "basketball"};
+    String[] wordlist;
     String newKeyword;
     /* (non-Javadoc)
      * @see URLHandler#handleRequest(java.net.URI)
      */
     public String handleRequest(URI url) {
+        wordlist = new String[] {"football", "soccer", "basketball"};
         if (url.getPath().equals("/")) {
             return String.format("Simple Search Engine");
 
-        } else if (url.getPath().equals(wordlist[0])) {
+        } else if (url.getPath().equals("/" + wordlist[0])) {
             keyword = wordlist[0];
-            return String.format(keyword);
-        } else if (url.getPath().equals(wordlist[1])) {
+            return keyword;
+        } else if (url.getPath().equals("/" + wordlist[1])) {
             keyword = wordlist[1];
             return String.format(keyword);
         } else if (url.getPath().equals("/testword")) {
